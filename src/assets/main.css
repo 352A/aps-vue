@@ -1,0 +1,153 @@
+/* markup modal */
+.lmv-markup-gui-toolbar {
+  background: rgba(120, 25, 125, 0.2);
+  color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  left: 0;
+  backdrop-filter: blur(5px);
+  transform: scale(0.88);
+  transform-origin: top left;
+}
+
+/* parent */
+.lmv-markup-gui-toolbar-content {
+  width: 100%;
+  height: 500px;
+  overflow-y: hidden;
+
+  /* Hide scrollbar for Chrome, Safari, Opera */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.lmv-markup-gui-collapse-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* child */
+.lmv-markup-gui-collapse-content {
+  height: 90%;
+  overflow-y: auto;
+}
+
+/* reset height when content is collapsed */
+.lmv-markup-gui-toolbar-content:has(
+    .lmv-markup-gui-collapse-content[style*="display: none"]
+  ) {
+  max-height: 40px;
+}
+
+/* markup modal buttons */
+
+/* collapse markup modal */
+.lmv-markup-gui-collapse-btn {
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url("data:image/svg+xml,%3Csvg%20%20xmlns=%22http://www.w3.org/2000/svg%22%20%20width=%2224%22%20%20height=%2224%22%20%20viewBox=%220%200%2024%2024%22%20%20fill=%22none%22%20%20stroke=%22currentColor%22%20%20stroke-width=%222%22%20%20stroke-linecap=%22round%22%20%20stroke-linejoin=%22round%22%20%20class=%22icon%20icon-tabler%20icons-tabler-outline%20icon-tabler-eye%22%3E%3Cpath%20stroke=%22none%22%20d=%22M0%200h24v24H0z%22%20fill=%22none%22/%3E%3Cpath%20d=%22M10%2012a2%202%200%201%200%204%200a2%202%200%200%200%20-4%200%22%20/%3E%3Cpath%20d=%22M21%2012c-2.4%204%20-5.4%206%20-9%206c-3.6%200%20-6.6%20-2%20-9%20-6c2.4%20-4%205.4%20-6%209%20-6c3.6%200%206.6%202%209%206%22%20/%3E%3C/svg%3E")
+    no-repeat center center;
+  background-size: 24px 24px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* close modal */
+.lmv-markup-editmode-done {
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20stroke='none'%20d='M0%200h24v24H0z'%20fill='none'/%3E%3Cpath%20d='M18%206l-12%2012'/%3E%3Cpath%20d='M6%206l12%2012'/%3E%3C/svg%3E")
+    no-repeat center center;
+  background-size: 24px 24px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.lmv-markup-gui-collapse-btn,
+.lmv-markup-editmode-done {
+  margin-bottom: 5px !important;
+}
+
+/* action buttons */
+.lmv-markup-gui-undo,
+.lmv-markup-gui-redo,
+.lmv-markup-gui-delete,
+.lmv-markup-gui-duplicate,
+.lmv-markup-gui-cut,
+.lmv-markup-gui-copy,
+.lmv-markup-gui-paste {
+  background: white;
+  width: 4rem;
+  height: 1rem;
+  margin: 5px;
+  border-radius: 10px;
+  padding: 0.8rem 0.7rem;
+  font-weight: 600;
+}
+
+.lmv-markup-gui-undo {
+  text-indent: -9999px;
+  overflow: hidden;
+  background-image: url("data:image/svg+xml,%3Csvg%20%20xmlns=%22http://www.w3.org/2000/svg%22%20%20width=%2224%22%20%20height=%2224%22%20%20viewBox=%220%200%2024%2024%22%20%20fill=%22none%22%20%20stroke=%22currentColor%22%20%20stroke-width=%222%22%20%20stroke-linecap=%22round%22%20%20stroke-linejoin=%22round%22%20%20class=%22icon%20icon-tabler%20icons-tabler-outline%20icon-tabler-arrow-back-up%22%3E%3Cpath%20stroke=%22none%22%20d=%22M0%200h24v24H0z%22%20fill=%22none%22/%3E%3Cpath%20d=%22M9%2014l-4%20-4l4%20-4%22%20/%3E%3Cpath%20d=%22M5%2010h11a4%204%200%201%201%200%208h-1%22%20/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+}
+
+.lmv-markup-gui-redo {
+  text-indent: -9999px;
+  overflow: hidden;
+  background-image: url("data:image/svg+xml,%3Csvg%20%20xmlns=%22http://www.w3.org/2000/svg%22%20%20width=%2224%22%20%20height=%2224%22%20%20viewBox=%220%200%2024%2024%22%20%20fill=%22none%22%20%20stroke=%22currentColor%22%20%20stroke-width=%222%22%20%20stroke-linecap=%22round%22%20%20stroke-linejoin=%22round%22%20%20class=%22icon%20icon-tabler%20icons-tabler-outline%20icon-tabler-arrow-forward-up%22%3E%3Cpath%20stroke=%22none%22%20d=%22M0%200h24v24H0z%22%20fill=%22none%22/%3E%3Cpath%20d=%22M15%2014l4%20-4l-4%20-4%22%20/%3E%3Cpath%20d=%22M19%2010h-11a4%204%200%201%200%200%208h1%22%20/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+}
+
+.lmv-markup-gui-delete {
+  background-color: rgba(250, 0, 0, 0.5);
+  color: white;
+}
+
+/* markup tool select */
+.lmv-markup-gui-editMode {
+  padding: 5px;
+}
+
+.lmv-markup-gui-editMode select {
+  background: white;
+  width: 100%;
+  padding: 5px;
+  height: 1.2rem;
+  border-radius: 10px;
+  padding: 0.8rem 0rem;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.lmv-markup-gui-editMode option {
+  text-align: center;
+  cursor: pointer;
+  z-index: 30;
+  font-size: 0.7rem;
+}
+
+.lmv-markup-gui-editMode span {
+  margin: 1rem 0.5rem 0.2rem 0.5rem;
+  font-weight: 600;
+}
+
+.lmv-markup-gui-editMode span {
+  display: block;
+}
+
+/* grid of style options */
+.lmv-markup-gui-style-options {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  gap: 0.5rem; /* space between items */
+}

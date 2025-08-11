@@ -24,8 +24,15 @@ onMounted(async () => {
       accessToken: access_token,
     };
 
+    const config = {
+      extensions: [
+        "Autodesk.Viewing.MarkupsCore",
+        "Autodesk.Viewing.MarkupsGui",
+      ],
+    };
+
     Autodesk.Viewing.Initializer(options, () => {
-      const viewer = new Autodesk.Viewing.GuiViewer3D(viewerRef.value);
+      const viewer = new Autodesk.Viewing.GuiViewer3D(viewerRef.value, config);
       viewer.start();
 
       Autodesk.Viewing.Document.load(
