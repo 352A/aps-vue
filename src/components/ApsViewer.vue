@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div ref="viewerRef" style="width: 100%; height: 100vh"></div>
+    <div
+      ref="viewerRef"
+      style="width: 100%; height: calc(100vh - 65px); position: absolute"
+    ></div>
   </div>
 </template>
 
